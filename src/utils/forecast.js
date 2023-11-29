@@ -17,10 +17,14 @@ const forecast = (latitude, longtitude, callback) => {
     } else {
       callback(
         undefined,
-        "The weather is " +
+        body.current.weather_descriptions[0] +
+          "The weather is " +
           body.current.temperature +
           " It feels like " +
-          body.current.feelslike
+          body.current.feelslike +
+          " degrees out. The Humidity is " +
+          body.current.humidity +
+          "%"
       );
     }
   });
